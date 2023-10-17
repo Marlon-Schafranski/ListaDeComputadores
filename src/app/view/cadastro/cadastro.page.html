@@ -1,0 +1,71 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Cadastro de Computadores </ion-title>
+    <ion-item> </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list>
+    <ion-item>
+      <ion-input
+        label="Categoria:"
+        placeholder=" PC Workstation"
+        [(ngModel)]="pcDeCadastro.categoria"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Processador:"
+        placeholder="AMD Ryzen 5 5600"
+        [(ngModel)]="pcDeCadastro.processador"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Placa de Vídeo:"
+        placeholder="Geforce RTX 3050 8GB"
+        [(ngModel)]="pcDeCadastro.placaVideo"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Memoria Ram:"
+        placeholder="8GB DDR4 3200"
+        [(ngModel)]="pcDeCadastro.memoriaRam"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select
+        placeholder="SSD 500GB"
+        [(ngModel)]="pcDeCadastro.armazenamento"
+      >
+        <div slot="label">Armazenamento:<ion-text></ion-text></div>
+        <ion-select-option value="0">SSD 500GB</ion-select-option>
+        <ion-select-option value="1">SSD 1T</ion-select-option>
+        <ion-select-option value="2">SSD 500GB NVMe M.2</ion-select-option>
+        <ion-select-option value="3">SSD 1T NVMe M.2</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button
+      expand="block"
+      fill="outline"
+      color="success"
+      (click)="cadastro()"
+      >Cadastrar</ion-button
+    >
+    <ion-button
+      (click)="voltar()"
+      fill="outline"
+      expand="block"
+      color="primary"
+    >
+      voltar
+    </ion-button>
+  </ion-list>
+</ion-content>

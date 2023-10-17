@@ -1,0 +1,85 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Edição de Computadores </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list>
+    <ion-item>
+      <ion-toggle [enableOnOffLabels]="true" (ionChange)="edicao()"
+        >Ativar Edição</ion-toggle
+      >
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Categoria"
+        placeholder="PC Workstation"
+        [(ngModel)]="cadastrar.categoria"
+        disabled="{{cadastrar.ativarEdicao}}"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Processador"
+        placeholder="AMD Ryzen 5 5600"
+        [(ngModel)]="cadastrar.processador"
+        disabled="{{cadastrar.ativarEdicao}}"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Placa de vídeo"
+        placeholder="Geforce RTX 3050 8GB"
+        [(ngModel)]="cadastrar.placaVideo"
+        disabled="{{cadastrar.ativarEdicao}}"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input
+        label="Memória RAM"
+        placeholder="8GB DDR4 3200"
+        [(ngModel)]="cadastrar.memoriaRam"
+        disabled="{{cadastrar.ativarEdicao}}"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select
+        label="Armazenamento"
+        placeholder="SSD 500GB"
+        [(ngModel)]="cadastrar.armazenamento"
+        disabled="{{cadastrar.ativarEdicao}}"
+      >
+        <ion-select-option value="0">SSD 500GB</ion-select-option>
+        <ion-select-option value="1">SSD 1T</ion-select-option>
+        <ion-select-option value="2">SSD 500GB NVMe M.2</ion-select-option>
+        <ion-select-option value="3">SSD 1T NVMe M.2</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button
+      fill="outline"
+      expand="block"
+      color="success"
+      (click)="alterar()"
+      disabled="{{cadastrar.ativarEdicao}}"
+      >Salvar</ion-button
+    >
+    <ion-button
+      fill="outline"
+      expand="block"
+      color="danger"
+      (click)="excluirCadastro()"
+      disabled="{{cadastrar.ativarEdicao}}"
+      >Excluir</ion-button
+    >
+    <ion-button (click)="voltar()" fill="outline" expand="full" color="primary">
+      voltar
+    </ion-button>
+  </ion-list>
+</ion-content>
